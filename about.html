@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Lavendra Homes</title>
+<meta name="description" content="Lavendra Homes is a free ad posting website in Sri Lanka. Learn how you can post free ads for houses, vehicles, electronics, clothes, furniture, jobs, and more.">
+<meta name="keywords" content="Lavendra Homes, Free Ads Sri Lanka, Post Free Ads, Buy, Sell, Donate, Online Marketplace">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+* { box-sizing:border-box; margin:0; padding:0; font-family:'Inter',sans-serif; }
+body { background:#FFF3F3; color:#333;  }
+
+/* ===== NAVBAR ===== */
+nav {
+    background:#FFB6B9; padding:15px 30px;
+    display:flex; justify-content:space-between; align-items:center;
+    position:relative; z-index:10;
+}
+nav .logo { font-size:24px; font-weight:700; color:#990e64; }
+nav ul { list-style:none; display:flex; gap:15px; }
+
+/* NORMAL LINKS */
+nav ul li a {
+    text-decoration:none;
+    color:#990e64;
+    font-weight:600;
+    padding:8px 0;
+    transition:0.3s ease;
+}
+/* ACTIVE LINK BOX */
+nav ul li a.active {
+    background:#FFF9C4;
+    color:#FF6B6B;
+    padding:8px 16px;
+    border-radius:12px;
+}
+nav ul li a.active:hover { background:#FFF59D; }
+
+/* CTA BUTTONS */
+.post-ad-btn { margin-left:15px; padding:8px 18px; border:none; border-radius:12px; background-color:#FFF9C4; color:#FF6B6B; font-weight:600; cursor:pointer; transition:background 0.3s; }
+.post-ad-btn:hover { background-color:#FFF59D; }
+
+/* HAMBURGER */
+.menu-toggle { display:none; flex-direction:column; cursor:pointer; }
+.menu-toggle span { background:#fff; height:3px; width:25px; margin:4px 0; border-radius:2px; transition:all 0.3s ease; }
+
+/* OVERLAY MENU */
+.overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9; }
+.overlay.active { display:flex; }
+.overlay .nav-box {
+    background:#fff; padding:30px 40px; border-radius:20px;
+    text-align:center; width:80%; max-width:320px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease;
+}
+.overlay .nav-box ul { list-style:none; display:flex; flex-direction:column; gap:35px; }
+
+/* MOBILE LINKS - BOX HOVER ACTIVE */
+.overlay .nav-box ul li a {
+    color:#FF6B6B; font-weight:600; font-size:18px; text-decoration:none;
+    padding:10px 16px; border-radius:12px; transition:0.3s; background:none;
+}
+.overlay .nav-box ul li a.active,
+.overlay .nav-box ul li a:hover { background:#FFF9C4; color:#FF6B6B; }
+
+@keyframes fadeIn { from { opacity:0; transform:scale(0.9); } to { opacity:1; transform:scale(1); } }
+
+/* ===== HEADER ===== */
+header { text-align:center; padding:50px 20px; }
+header h1 { color:#FF6B6B; font-size:34px; margin-bottom:10px; }
+header p { font-size:1.2em; color:#555; }
+
+/* ===== CONTENT ===== */
+.content {
+  background:#fff; margin:40px auto; max-width:900px; border-radius:20px; padding:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+.content p { margin-bottom:15px; }
+.ad-banner {
+  background:#FFF9C4; border:2px dashed #FF6B6B; padding:15px; text-align:center;
+  border-radius:10px; font-weight:600; margin:30px 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background:#FFB6B9;
+    color:#990e64;
+    text-align:center;
+    padding:30px 20px;
+}
+footer p { margin-bottom:10px; }
+footer .social-icons {
+    margin-top:10px;
+}
+footer .social-icons a {
+    color:#990e64;
+    margin:0 10px;
+    font-size:20px;
+    display:inline-block;
+    transition:all 0.3s;
+}
+footer .social-icons a:hover { color:#990e64; transform:scale(1.2); }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav ul{ display:none; } .menu-toggle{ display:flex; }
+  header h1{ font-size:26px; } .content{ margin:20px; padding:20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Lavendra Homes</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="post-ad.html">Post Ad</a></li>
+    </ul>
+</nav>
+
+<!-- MOBILE OVERLAY NAV -->
+<div class="overlay" id="overlay">
+    <div class="nav-box">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="post-ad.html">Post Ad</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <h1>About Lavendra Homes</h1>
+  <p>Your trusted free ad posting website for buying, selling, and donating items in Sri Lanka.</p>
+</header>
+
+<!-- CONTENT -->
+<div class="content">
+  <p>
+    Lavendra Homes was created to provide a safe, convenient, and reliable platform for individuals to post free ads across Sri Lanka. Whether it is houses, vehicles, electronics, clothes, or furniture, our goal is to connect buyers and sellers efficiently at no cost.
+  </p>
+  <p>
+    Our platform is designed with user experience in mind, with simple navigation, easy posting of ads, and clear categories so users can find what they need. We prioritize transparency and trust, ensuring every ad meets our quality standards.
+  </p>
+  <p>
+    Lavendra Homes is not just a marketplace, it is a community. We encourage donations and sharing, helping people give unused items a new life while supporting those in need. Posting ads on our platform is completely free, making it accessible for everyone.
+  </p>
+  <p>
+    We continually update and improve the platform to ensure a smooth experience for all users. Your feedback helps us grow and maintain a high-quality free ad posting service.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>Email us at: <a href="mailto:info@lavendra.homes" style="color:#990e64; text-decoration:underline;">info@lavendra.homes</a></p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p style="margin-top:10px;">&copy; 2025 Lavendra Homes. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById('overlay').classList.toggle('active');
+}
+
+// Hide overlay when clicking outside nav-box
+document.getElementById('overlay').addEventListener('click', function(e){
+    if(e.target === this) this.classList.remove('active');
+});
+
+// Close overlay when clicking nav link
+document.querySelectorAll('.overlay .nav-box ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('overlay').classList.remove('active');
+    });
+});
+
+// Automatically hide overlay on resize
+window.addEventListener('resize', () => {
+    if(window.innerWidth > 768){
+        document.getElementById('overlay').classList.remove('active');
+    }
+});
+</script>
+
+</body>
+</html>

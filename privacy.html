@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Lavendra Homes</title>
+<meta name="description" content="Privacy Policy of Lavendra Homes, a free ad posting website in Sri Lanka. Learn how we protect your personal information.">
+<meta name="keywords" content="Lavendra Homes, Privacy Policy, Free Ads Sri Lanka, Personal Information, Terms">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#FFF3F3;color:#333;}
+
+/* ===== NAVBAR ===== */
+nav{
+    background:#FFB6B9;padding:15px 30px;
+    display:flex;justify-content:space-between;align-items:center;position:relative;z-index:10;
+}
+nav .logo{font-size:24px;font-weight:700;color:#990e64;}
+nav ul{list-style:none;display:flex;gap:15px;}
+nav ul li a{text-decoration:none;color:#990e64;font-weight:600;padding:8px 0;transition:0.3s ease;}
+nav ul li a.active{background:#FFF9C4;color:#FF6B6B;padding:8px 16px;border-radius:12px;}
+nav ul li a.active:hover{background:#FFF59D;}
+nav ul li a:hover{color:#FFDFD3;}
+.post-ad-btn{margin-left:15px;padding:8px 18px;border:none;border-radius:12px;background:#FFF9C4;color:#FF6B6B;font-weight:600;cursor:pointer;}
+.post-ad-btn:hover{background:#FFF59D;}
+
+/* HAMBURGER */
+.menu-toggle{display:none; flex-direction:column; cursor:pointer;}
+.menu-toggle span{background:#fff; height:3px; width:25px; margin:4px 0; border-radius:2px; transition:all 0.3s ease;}
+
+/* OVERLAY MENU */
+.overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);justify-content:center;align-items:center;z-index:9;}
+.overlay.active{display:flex;}
+.overlay .nav-box{
+    background:#fff; padding:30px 40px; border-radius:20px;
+    text-align:center; width:80%; max-width:320px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+.overlay .nav-box ul{list-style:none;display:flex;flex-direction:column;gap:35px;}
+.overlay .nav-box ul li a{
+    color:#FF6B6B; font-weight:600; font-size:18px; text-decoration:none;
+    padding:10px 16px; border-radius:12px; transition:0.3s; background:none;
+}
+.overlay .nav-box ul li a.active,
+.overlay .nav-box ul li a:hover{background:#FFF9C4; color:#FF6B6B;}
+
+/* ===== HEADER ===== */
+header{text-align:center;padding:50px 20px;}
+header h1{color:#FF6B6B;margin-bottom:10px;font-size:34px;}
+header p{font-size:1.1em;color:#555;}
+
+/* ===== CONTENT ===== */
+.content{background:#fff;margin:40px auto;max-width:900px;border-radius:20px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.1);}
+.content h2{color:#FF6B6B;margin-top:20px;margin-bottom:10px;}
+.content p{margin-bottom:15px;}
+.ad-banner{background:#FFF9C4;border:2px dashed #FF6B6B;text-align:center;padding:15px;border-radius:10px;margin:30px 0;font-weight:600;}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#FFB6B9;
+    color:#990e64;
+    text-align:center;
+    padding:30px 20px;
+}
+footer p{margin-bottom:10px;}
+footer a{color:#990e64;text-decoration:underline;}
+footer .social-icons{margin-top:10px;}
+footer .social-icons a{
+    color:#990e64;
+    margin:0 10px;
+    font-size:20px;
+    display:inline-block;
+    transition:all 0.3s;
+}
+footer .social-icons a:hover{
+    color:#990e64;
+    transform:scale(1.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    nav ul{display:none;}
+    .menu-toggle{display:flex;}
+    .content{margin:20px;padding:20px;}
+    header h1{font-size:26px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Lavendra Homes</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="privacy.html" class="active">Privacy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="post-ad.html">Post Ad</a></li>
+    </ul>
+</nav>
+
+<!-- MOBILE OVERLAY NAV -->
+<div class="overlay" id="overlay">
+    <div class="nav-box">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="privacy.html" class="active">Privacy</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="post-ad.html">Post Ad</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <h1>Privacy Policy</h1>
+  <p>Lavendra Homes is committed to protecting your personal information and ensuring a safe online experience.</p>
+</header>
+
+<!-- CONTENT -->
+<div class="content">
+  <p>
+    This Privacy Policy explains how Lavendra Homes collects, uses, and protects the information you provide while using our platform. By using our services, you consent to the practices described in this policy.
+  </p>
+
+  <h2>Information We Collect</h2>
+  <p>
+    We may collect personal information such as your name, email address, contact number, account credentials, and transaction details. Additionally, we collect usage data and device information to improve the user experience.
+  </p>
+
+  <h2>How We Use Your Information</h2>
+  <p>
+    Your information is used to provide and improve our services, process transactions, send important notifications, and ensure platform security. Lavendra Homes does not sell your personal information to third parties.
+  </p>
+
+  <h2>Cookies</h2>
+  <p>
+    Our website uses cookies to remember your preferences, enhance functionality, and analyze traffic. You can manage or disable cookies via your browser settings.
+  </p>
+
+  <h2>Third-Party Services</h2>
+  <p>
+    Lavendra Homes may display advertisements from third-party networks. These partners may use cookies or other tracking technologies to serve relevant ads. We encourage reviewing their privacy policies for additional details.
+  </p>
+
+  <h2>Security</h2>
+  <p>
+    We implement industry-standard measures to protect your information from unauthorized access, disclosure, or alteration.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>Email us at: <a href="mailto:info@lavendra.homes">info@lavendra.homes</a></p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p style="margin-top:10px;">&copy; 2025 Lavendra Homes. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  const nav=document.getElementById('nav-links');
+  const overlay=document.getElementById('overlay');
+  nav.classList.toggle('active');
+  overlay.style.display=nav.classList.contains('active')?'flex':'none';
+}
+
+// Close overlay when clicking outside nav-box
+document.getElementById('overlay').addEventListener('click', function(e){
+    if(e.target === this) this.classList.remove('active');
+});
+
+// Close overlay when clicking nav link
+document.querySelectorAll('.overlay .nav-box ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('overlay').classList.remove('active');
+    });
+});
+
+// Automatically hide overlay on resize
+window.addEventListener('resize', () => {
+    if(window.innerWidth > 768){
+        document.getElementById('overlay').classList.remove('active');
+    }
+});
+</script>
+
+</body>
+</html>

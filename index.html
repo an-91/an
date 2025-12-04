@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lavendra Homes - Free Ad Posting Website in Sri Lanka</title>
+<meta name="description" content="Lavendra Homes is a free ad posting website in Sri Lanka. Post ads for houses, vehicles, electronics, clothes, furniture, jobs, and more at no cost.">
+<meta name="keywords" content="Free Ads Sri Lanka, Post Free Ads, Sell Items Online, Buy Items Online, Donate Items, Free Classifieds Sri Lanka">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+body { background:#FCE4EC; min-height:100vh; }
+
+/* NAVBAR */
+nav { background:#FFB6B9; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; position:relative; z-index:10; }
+nav .logo { font-size:24px; font-weight:700; color:#990e64; }
+nav ul { list-style:none; display:flex; gap:15px; }
+
+/* NORMAL NAV LINKS */
+nav ul li a {
+    text-decoration:none;
+    color:#990e64;
+    font-weight:600;
+    padding:8px 0;
+    transition:0.3s ease;
+}
+
+/* ACTIVE LINK BOX FOR DESKTOP */
+nav ul li a.active {
+    background:#FFF9C4;
+    color:#FF6B6B;
+    padding:8px 16px;
+    border-radius:12px;
+}
+nav ul li a.active:hover { background:#FFF59D; }
+
+/* CTA BUTTONS */
+.post-ad-btn { margin-left:15px; padding:8px 18px; border:none; border-radius:12px; background-color:#FFF9C4; color:#FF6B6B; font-weight:600; cursor:pointer; transition:background 0.3s; }
+.post-ad-btn:hover { background-color:#FFF59D; }
+
+/* HAMBURGER */
+.menu-toggle { display:none; flex-direction:column; cursor:pointer; }
+.menu-toggle span { background:#fff; height:3px; width:25px; margin:4px 0; border-radius:2px; transition:all 0.3s ease; }
+
+/* OVERLAY MENU */
+.overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9; }
+.overlay.active { display:flex; }
+.overlay .nav-box { background:#fff; padding:30px 40px; border-radius:20px; text-align:center; width:80%; max-width:320px; box-shadow:0 10px 30px rgba(0,0,0,0.2); animation: fadeIn 0.3s ease; }
+.overlay .nav-box ul { list-style:none; display:flex; flex-direction:column; gap:35px; }
+
+/* SMALL SCREEN LINKS - BOX FOR ACTIVE & HOVER */
+.overlay .nav-box ul li a {
+    color:#FF6B6B;
+    font-weight:600;
+    font-size:18px;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:12px;
+    background:none;
+    transition:0.3s;
+}
+.overlay .nav-box ul li a.active,
+.overlay .nav-box ul li a:hover {
+    background:#FFF9C4;
+    color:#FF6B6B;
+}
+
+/* HERO SLIDER */
+.hero-slider { position:relative; width:100%; min-height:80vh; display:flex; overflow:hidden; flex-direction:column; align-items:center; justify-content:center; }
+.slide { width:100%; height:100%; display:flex; justify-content:center; align-items:center; text-align:center; opacity:0; position:absolute; top:0; left:0; transition:opacity 1s ease-in-out; background: linear-gradient(135deg, #ffd1dc, #ffe0ac); padding:0 20px; }
+.slide:nth-child(2) { background: linear-gradient(135deg, #a8edea, #fed6e3); }
+.slide:nth-child(3) { background: linear-gradient(135deg, #d4fc79, #96e6a1); }
+.slide.active { opacity:1; }
+
+.overlay-text { background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); padding:25px 35px; border-radius:15px; animation: fadeIn 1s ease-in-out; }
+.overlay-text h1 { font-size:2.5em; color:#FF6B6B; margin-bottom:15px; }
+.overlay-text p { font-size:1.2em; color:#555; margin-bottom:20px; }
+.overlay-text button { padding:10px 20px; border:none; border-radius:12px; background:#FFB6B9; color:#333; font-weight:600; cursor:pointer; transition:0.3s; }
+.overlay-text button:hover { background:#FF8C94; }
+
+/* CATEGORIES GRID */
+.categories { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px; width:90%; max-width:1200px; margin:40px auto; }
+.category { background:#fff; border-radius:20px; padding:20px; text-align:center; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; }
+.category:hover { transform:translateY(-5px); box-shadow:0 15px 25px rgba(0,0,0,0.2); background: #FFB6B9; color:#fff; }
+
+/* FOOTER */
+footer {
+    background:#FFB6B9;
+    color:#990e64;
+    text-align:center;
+    padding:30px 20px;
+}
+footer p { margin-bottom:10px; }
+footer .social-icons {
+    margin-top:10px;
+}
+footer .social-icons a {
+    color:#990e64;
+    margin:0 10px;
+    font-size:20px;
+    display:inline-block;
+    transition:all 0.3s;
+}
+footer .social-icons a:hover { color:#990e64; transform:scale(1.2); }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .menu-toggle { display:flex; }
+    nav ul, .post-ad-btn { display:none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Lavendra Homes</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="post-ad.html">Post Ad</a></li>
+    </ul>
+</nav>
+
+<!-- MOBILE OVERLAY -->
+<div class="overlay" id="overlay">
+    <div class="nav-box">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="post-ad.html">Post Ad</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- HERO -->
+<section class="hero-slider">
+    <div class="slide active">
+        <div class="overlay-text">
+            <h1>Free Ad Posting in Sri Lanka</h1>
+            <p>Post ads for houses, vehicles, electronics, clothes, furniture, jobs, and more for free.</p>
+            <button onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Explore Categories</button>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="overlay-text">
+            <h1>Buy, Sell & Donate Easily</h1>
+            <p>Find amazing deals and post your free ads online in Sri Lanka.</p>
+            <button onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Explore Categories</button>
+        </div>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+    <div class="category">Lands for Sale</div>
+    <div class="category">Houses for Sale</div>
+    <div class="category">Houses for Rent</div>
+    <div class="category">Rent Rooms</div>
+    <div class="category">Jobs</div>
+    <div class="category">Vehicles</div>
+    <div class="category">Electronics</div>
+    <div class="category">Clothes</div>
+    <div class="category">Shoes</div>
+    <div class="category">Accessories</div>
+    <div class="category">Pets</div>
+    <div class="category">Education</div>
+    <div class="category">Furniture</div>
+    <div class="category">Home Appliances</div>
+    <div class="category">Sports & Fitness</div>
+    <div class="category">Toys & Games</div>
+    <div class="category">Musical Instruments</div>
+    <div class="category">Beauty & Personal Care</div>
+    <div class="category">Donations</div>
+    <div class="category">Other Items</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Email us at: <a href="mailto:info@lavendra.homes" style="color:#990e64; text-decoration:underline;">info@lavendra.homes</a></p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p style="margin-top:10px;">&copy; 2025 Lavendra Homes. All Rights Reserved.</p>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+function toggleMenu(){
+    document.getElementById('overlay').classList.toggle('active');
+}
+
+// Hide overlay when clicking outside nav-box
+document.getElementById('overlay').addEventListener('click', function(e){
+    if(e.target === this) this.classList.remove('active');
+});
+
+// Close overlay when clicking nav link
+document.querySelectorAll('.overlay .nav-box ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('overlay').classList.remove('active');
+    });
+});
+
+// Automatically hide overlay on resize
+window.addEventListener('resize', () => {
+    if(window.innerWidth > 768){
+        document.getElementById('overlay').classList.remove('active');
+    }
+});
+
+// HERO SLIDER
+let currentSlide=0;
+const slides=document.querySelectorAll('.slide');
+const totalSlides=slides.length;
+function showSlide(index){
+    slides.forEach(s=>s.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+setInterval(()=>{
+    currentSlide=(currentSlide+1)%totalSlides;
+    showSlide(currentSlide);
+},5000);
+</script>
+
+</body>
+</html>
