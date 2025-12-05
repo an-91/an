@@ -11,6 +11,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+html, body { height:100%; display:flex; flex-direction:column; }
 body{background:#FFF3F3;color:#333;}
 
 /* ===== NAVBAR ===== */
@@ -52,6 +53,9 @@ header{text-align:center;padding:50px 20px;}
 header h1{color:#FF6B6B;margin-bottom:10px;font-size:34px;}
 header p{font-size:1.1em;color:#555;}
 
+/* ===== MAIN CONTENT ===== */
+main { flex:1; display:flex; flex-direction:column; }
+
 /* ===== CONTENT ===== */
 .content{background:#fff;margin:40px auto;max-width:900px;border-radius:20px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.1);}
 .content h2{color:#FF6B6B;margin-top:20px;margin-bottom:10px;}
@@ -79,6 +83,7 @@ footer{
     color:#990e64;
     text-align:center;
     padding:30px 20px;
+    margin-top:auto;
 }
 footer p{margin-bottom:10px;}
 footer a{color:#990e64;text-decoration:none;}
@@ -137,75 +142,74 @@ footer .social-icons a:hover{
     </div>
 </div>
 
-<!-- HEADER -->
-<header>
-  <h1>Post Your Ad</h1>
-  <p>Please read and agree to the terms before posting your ad.</p>
-</header>
+<!-- MAIN CONTENT -->
+<main>
+  <!-- HEADER -->
+  <header>
+    <h1>Post Your Ad</h1>
+    <p>Please read and agree to the terms before posting your ad.</p>
+  </header>
 
-<!-- CONTENT -->
-<div class="content">
-  <h2>Terms & Conditions</h2>
-  <ul>
-    <li>I confirm that all information provided is accurate and truthful.</li>
-    <li>I will not post illegal, harmful, or offensive content.</li>
-    <li>Lavendra Homes is not responsible for any transactions or communications between buyers and sellers.</li>
-    <li>Contact details provided may be used for legitimate communication only.</li>
-    <li>I will follow all community guidelines and respect other users.</li>
-    <li>Lavendra Homes reserves the right to remove any ad post that violates these terms.</li>
-    <li>By submitting, I agree that all interactions are solely between the involved parties, and Lavendra Homes acts only as a platform.</li>
-  </ul>
+  <!-- CONTENT -->
+  <div class="content">
+    <h2>Terms & Conditions</h2>
+    <ul>
+      <li>I confirm that all information provided is accurate and truthful.</li>
+      <li>I will not post illegal, harmful, or offensive content.</li>
+      <li>Lavendra Homes is not responsible for any transactions or communications between buyers and sellers.</li>
+      <li>Contact details provided may be used for legitimate communication only.</li>
+      <li>I will follow all community guidelines and respect other users.</li>
+      <li>Lavendra Homes reserves the right to remove any ad post that violates these terms.</li>
+      <li>By submitting, I agree that all interactions are solely between the involved parties, and Lavendra Homes acts only as a platform.</li>
+    </ul>
 
-  <label class="agree-label">
-    <input type="checkbox" id="agreeCheckbox"> I have read and agree to the terms
-  </label>
+    <label class="agree-label">
+      <input type="checkbox" id="agreeCheckbox"> I have read and agree to the terms
+    </label>
 
-<div class="post-container">
-  <h2>Ad Details</h2>
-  <form id="adForm">
-    <input type="text" id="title" placeholder="Ad Title" required>
-    <textarea id="description" rows="5" placeholder="Description" required></textarea>
+    <div class="post-container">
+      <h2>Ad Details</h2>
+      <form id="adForm">
+        <input type="text" id="title" placeholder="Ad Title" required>
+        <textarea id="description" rows="5" placeholder="Description" required></textarea>
+        <select id="category" required>
+          <option value="">Select Category</option>
+          <option value="Lands for Sale">Lands for Sale</option>
+          <option value="Houses for Sale">Houses for Sale</option>
+          <option value="Houses for Rent">Houses for Rent</option>
+          <option value="Rent Rooms">Rent Rooms</option>
+          <option value="Jobs">Jobs</option>
+          <option value="Vehicles">Vehicles</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothes">Clothes</option>
+          <option value="Shoes">Shoes</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Pets & Animals">Pets & Animals</option>
+          <option value="Education">Education</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Home & Garden">Home & Garden</option>
+          <option value="Sports & Fitness">Sports & Fitness</option>
+          <option value="Toys">Toys</option>
+          <option value="Musical Instruments">Musical Instruments</option>
+          <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+          <option value="Other Items">Other Items</option>
+          <option value="Donations">Donations</option>
+        </select>
+        <input type="text" id="location" placeholder="Location" required>
+        <input type="number" id="price" placeholder="Price (LKR)" required>
+        <input type="text" id="contact" placeholder="Your Contact Info" required>
 
-    <select id="category" required>
-    <option value="">Select Category</option>
-    <option value="Lands for Sale">Lands for Sale</option>
-    <option value="Houses for Sale">Houses for Sale</option>
-    <option value="Houses for Rent">Houses for Rent</option>
-    <option value="Rent Rooms">Rent Rooms</option>
-    <option value="Jobs">Jobs</option>
-    <option value="Vehicles">Vehicles</option>
-    <option value="Electronics">Electronics</option>
-    <option value="Clothes">Clothes</option>
-    <option value="Shoes">Shoes</option>
-    <option value="Accessories">Accessories</option>
-    <option value="Pets & Animals">Pets & Animals</option>
-    <option value="Education">Education</option>
-    <option value="Furniture">Furniture</option>
-    <option value="Home & Garden">Home & Garden</option>
-    <option value="Sports & Fitness">Sports & Fitness</option>
-    <option value="Toys">Toys</option>
-    <option value="Musical Instruments">Musical Instruments</option>
-    <option value="Beauty & Personal Care">Beauty & Personal Care</option>
-    <option value="Other Items">Other Items</option>
-    <option value="Donations">Donations</option>
-    </select>
+        <p style="color:#f44336; font-weight:bold;">Note: After clicking 'Send to WhatsApp,' attach 4 images manually before sending.</p>
 
-    <input type="text" id="location" placeholder="Location" required>
-    <input type="number" id="price" placeholder="Price (LKR)" required>
-    <input type="text" id="contact" placeholder="Your Contact Info" required>
-
-    <p style="color:#f44336; font-weight:bold;">Note: After clicking 'Send to WhatsApp,' attach 4 images manually before sending.</p>
-
-    <button type="submit">Send to WhatsApp</button>
-  </form>
-</div>
-
-</div>
+        <button type="submit">Send to WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</main>
 
 <!-- FOOTER -->
 <footer>
-    <p>Email us at: <a href="mailto:info@lavendra.homes">lavendra.homes@gmail.com</a></p>
-    
+    <p>Email us at: <a href="mailto:lavendra.homes@gmail.com">lavendra.homes@gmail.com</a></p>
     <p style="margin-top:10px;">&copy; 2025 Lavendra Homes. All Rights Reserved.</p>
 </footer>
 
@@ -246,7 +250,6 @@ document.getElementById("adForm").addEventListener("submit", function(event) {
         event.preventDefault();
         alert("You must agree to the terms before posting your ad.");
     } else {
-        // Build WhatsApp message
         const title = document.getElementById("title").value;
         const description = document.getElementById("description").value;
         const category = document.getElementById("category").value;
@@ -263,7 +266,6 @@ Location: ${location}
 Price: LKR ${price}
 Contact: ${contact}`;
 
-        // Correct WhatsApp number
         const whatsappURL = "https://wa.me/94771182562?text=" + encodeURIComponent(message);
 
         window.open(whatsappURL, "_blank");
