@@ -64,9 +64,7 @@ header p{font-size:1.1em;color:#555;}
 .proceed-btn:disabled{background:#FFB6B9;cursor:not-allowed;}
 .proceed-btn:hover:not(:disabled){background:#FF4B4B;}
 
-
-
-* Post container */
+/* Post container */
 .post-container { max-width:800px; margin:30px auto; padding:25px; background:#fff; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.1);}
 .post-container h2 { color:#FF6B6B; margin-bottom:20px; text-align:center; }
 .post-container form { display:flex; flex-direction:column; gap:15px; }
@@ -74,7 +72,6 @@ header p{font-size:1.1em;color:#555;}
 .post-container button { padding:12px; border:none; background:#FF6B6B; color:#fff; font-weight:bold; cursor:pointer; border-radius:10px; transition:0.3s; }
 .post-container button:hover { background:#ff8888; }
 .ad-banner { background:#FFF9C4; border:2px dashed #FF6B6B; text-align:center; padding:15px; border-radius:10px; margin:30px 0; font-weight:600; }
-
 
 /* ===== FOOTER ===== */
 footer{
@@ -84,7 +81,7 @@ footer{
     padding:30px 20px;
 }
 footer p{margin-bottom:10px;}
-footer a{color:#990e64;text-decoration:underline;}
+footer a{color:#990e64;text-decoration:none;}
 footer .social-icons{margin-top:10px;}
 footer .social-icons a{
     color:#990e64;
@@ -162,48 +159,47 @@ footer .social-icons a:hover{
     <input type="checkbox" id="agreeCheckbox"> I have read and agree to the terms
   </label>
 
-  <button id="proceedBtn" class="proceed-btn" disabled>Proceed to Post Ad</button>
-
-
-
-
-
-
 <div class="post-container">
-  <div class="ad-banner">[Top Ad - 728x90]</div>
-
   <h2>Ad Details</h2>
   <form id="adForm">
     <input type="text" id="title" placeholder="Ad Title" required>
     <textarea id="description" rows="5" placeholder="Description" required></textarea>
 
     <select id="category" required>
-      <option value="">Select Category</option>
-      <option value="Lands for Sale">Lands for Sale</option>
-      <option value="Houses for Sale">Houses for Sale</option>
-      <option value="Houses for Rent">Houses for Rent</option>
-      <option value="Rent Rooms">Rent Rooms</option>
-      <option value="Jobs">Jobs</option>
-      <option value="Vehicles">Vehicles</option>
-      <option value="Electronics">Electronics</option>
-      <option value="Furniture">Furniture</option>
-      <option value="Home Appliances">Home Appliances</option>
-      <option value="Other Items">Other Items</option>
+    <option value="">Select Category</option>
+    <option value="Lands for Sale">Lands for Sale</option>
+    <option value="Houses for Sale">Houses for Sale</option>
+    <option value="Houses for Rent">Houses for Rent</option>
+    <option value="Rent Rooms">Rent Rooms</option>
+    <option value="Jobs">Jobs</option>
+    <option value="Vehicles">Vehicles</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Clothes">Clothes</option>
+    <option value="Shoes">Shoes</option>
+    <option value="Accessories">Accessories</option>
+    <option value="Pets & Animals">Pets & Animals</option>
+    <option value="Education">Education</option>
+    <option value="Furniture">Furniture</option>
+    <option value="Home & Garden">Home & Garden</option>
+    <option value="Sports & Fitness">Sports & Fitness</option>
+    <option value="Toys">Toys</option>
+    <option value="Musical Instruments">Musical Instruments</option>
+    <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+    <option value="Other Items">Other Items</option>
+    <option value="Donations">Donations</option>
     </select>
 
     <input type="text" id="location" placeholder="Location" required>
     <input type="number" id="price" placeholder="Price (LKR)" required>
     <input type="text" id="contact" placeholder="Your Contact Info" required>
 
-    <p style="color:#f44336; font-weight:bold;">Note: After clicking 'Send to WhatsApp,' attach images manually before sending.</p>
+    <p style="color:#f44336; font-weight:bold;">Note: After clicking 'Send to WhatsApp,' attach 4 images manually before sending.</p>
 
     <button type="submit">Send to WhatsApp</button>
   </form>
+</div>
 
-  </div>
-
-
-  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -224,7 +220,6 @@ function toggleMenu(){
   overlay.classList.toggle('active');
 }
 
-// Close overlay when clicking outside nav-box
 document.getElementById('overlay').addEventListener('click', function(e){
     if(e.target === this) {
         this.classList.remove('active');
@@ -232,7 +227,6 @@ document.getElementById('overlay').addEventListener('click', function(e){
     }
 });
 
-// Close overlay when clicking nav link
 document.querySelectorAll('.overlay .nav-box ul li a').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById('overlay').classList.remove('active');
@@ -240,7 +234,6 @@ document.querySelectorAll('.overlay .nav-box ul li a').forEach(link => {
     });
 });
 
-// Hide overlay automatically on resize
 window.addEventListener('resize', () => {
     if(window.innerWidth > 768){
         document.getElementById('overlay').classList.remove('active');
@@ -248,16 +241,37 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Enable proceed button only when checkbox is checked
-const checkbox = document.getElementById('agreeCheckbox');
-const proceedBtn = document.getElementById('proceedBtn');
-checkbox.addEventListener('change', () => {
-  proceedBtn.disabled = !checkbox.checked;
-});
+// Prevent sending to WhatsApp without checkbox ticked
+document.getElementById("adForm").addEventListener("submit", function(event) {
+    const checkbox = document.getElementById("agreeCheckbox");
 
-// Redirect to Google Form when clicking proceed
-proceedBtn.addEventListener('click', () => {
-  window.location.href = 'https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform'; // <-- replace with your Google Form URL
+    if (!checkbox.checked) {
+        event.preventDefault();
+        alert("You must agree to the terms before posting your ad.");
+    } else {
+        // Build WhatsApp message
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const category = document.getElementById("category").value;
+        const location = document.getElementById("location").value;
+        const price = document.getElementById("price").value;
+        const contact = document.getElementById("contact").value;
+
+        const message = 
+`*New Ad Submission*
+Title: ${title}
+Description: ${description}
+Category: ${category}
+Location: ${location}
+Price: LKR ${price}
+Contact: ${contact}`;
+
+        // Correct WhatsApp number
+        const whatsappURL = "https://wa.me/94771182562?text=" + encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+        event.preventDefault();
+    }
 });
 </script>
 
