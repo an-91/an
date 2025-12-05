@@ -60,7 +60,6 @@ nav ul li a.active:hover { background:#FFF59D; }
 }
 .overlay .nav-box ul { list-style:none; display:flex; flex-direction:column; gap:35px; }
 
-/* MOBILE LINKS - BOX HOVER ACTIVE */
 .overlay .nav-box ul li a {
     color:#FF6B6B; font-weight:600; font-size:18px; text-decoration:none;
     padding:10px 16px; border-radius:12px; transition:0.3s; background:none;
@@ -71,34 +70,32 @@ nav ul li a.active:hover { background:#FFF59D; }
 @keyframes fadeIn { from { opacity:0; transform:scale(0.9); } to { opacity:1; transform:scale(1); } }
 
 /* ===== HEADER ===== */
-header { text-align:center; padding:50px 20px; }
-header h1 { color:#FF6B6B; font-size:34px; margin-bottom:10px; }
-header p { font-size:1.2em; color:#555; }
+header { text-align:center; padding:40px 20px; }
+header h1 { color:#FF6B6B; font-size:32px; margin-bottom:10px; }
+header p { font-size:1.15em; color:#555; }
 
-/* ===== CONTENT ===== */
+/* ===== CONTENT BOX (COMPACT) ===== */
 .content {
-  background:#fff; margin:40px auto; max-width:900px; border-radius:20px; padding:30px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1); 
-  flex:1; /* ensures content takes remaining space */
+  background:#fff;
+  margin:20px auto;
+  max-width:900px;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.1);
+  height:auto;        /* ensures height fits content */
 }
-.content p { margin-bottom:15px; }
-.ad-banner {
-  background:#FFF9C4; border:2px dashed #FF6B6B; padding:15px; text-align:center;
-  border-radius:10px; font-weight:600; margin:30px 0;
-}
+.content p { margin-bottom:12px; }
 
 /* ===== FOOTER ===== */
 footer {
     background:#FFB6B9;
     color:#990e64;
     text-align:center;
-    padding:30px 20px;
-    margin-top:auto; /* push footer to bottom */
+    padding:25px 20px;
+    margin-top:auto;
 }
 footer p { margin-bottom:10px; }
-footer .social-icons {
-    margin-top:10px;
-}
+
 footer .social-icons a {
     color:#990e64;
     margin:0 10px;
@@ -106,13 +103,14 @@ footer .social-icons a {
     display:inline-block;
     transition:all 0.3s;
 }
-footer .social-icons a:hover { color:#990e64; transform:scale(1.2); }
+footer .social-icons a:hover { transform:scale(1.2); }
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
   nav ul{ display:none; } .menu-toggle{ display:flex; }
-  header h1{ font-size:26px; } .content{ margin:20px; padding:20px; }
-  footer p{ font-size: 12px;}
+  header h1{ font-size:26px; }
+  .content{ margin:15px; padding:18px; }
+  footer p{ font-size:12px; }
 }
 </style>
 </head>
@@ -154,7 +152,7 @@ footer .social-icons a:hover { color:#990e64; transform:scale(1.2); }
   <p>Your trusted free ad posting website for buying, selling, and donating items in Sri Lanka.</p>
 </header>
 
-<!-- CONTENT -->
+<!-- COMPACT CONTENT BOX -->
 <div class="content">
   <p>
     Lavendra Homes was created to provide a safe, convenient, and reliable platform for individuals to post free ads across Sri Lanka. Whether it is houses, vehicles, electronics, clothes, or furniture, our goal is to connect buyers and sellers efficiently at no cost.
@@ -173,7 +171,6 @@ footer .social-icons a:hover { color:#990e64; transform:scale(1.2); }
 <!-- FOOTER -->
 <footer>
     <p>Email us at: <a href="mailto:info@lavendra.homes" style="color:#990e64; text-decoration:none;">lavendra.homes@gmail.com</a></p>
-    
     <p style="margin-top:10px;">&copy; 2025 Lavendra Homes. All Rights Reserved.</p>
 </footer>
 
@@ -182,19 +179,16 @@ function toggleMenu(){
     document.getElementById('overlay').classList.toggle('active');
 }
 
-// Hide overlay when clicking outside nav-box
 document.getElementById('overlay').addEventListener('click', function(e){
     if(e.target === this) this.classList.remove('active');
 });
 
-// Close overlay when clicking nav link
 document.querySelectorAll('.overlay .nav-box ul li a').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById('overlay').classList.remove('active');
     });
 });
 
-// Automatically hide overlay on resize
 window.addEventListener('resize', () => {
     if(window.innerWidth > 768){
         document.getElementById('overlay').classList.remove('active');
