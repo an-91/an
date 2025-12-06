@@ -5,13 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Lavendra Homes - Free Ad Posting Website in Sri Lanka</title>
-<meta name="description" content="Lavendra Homes is a free ad posting website in Sri Lanka. Post ads for houses, vehicles, electronics, clothes, furniture, jobs, and more at no cost.">
-<meta name="keywords" content="Free Ads Sri Lanka, Post Free Ads, Sell Items Online, Buy Items Online, Donate Items, Free Classifieds Sri Lanka">
+<meta name="description" content="Lavendra Homes is a trusted free ad posting website in Sri Lanka. Post ads for houses, vehicles, electronics, clothes, furniture, jobs, and more at no cost.">
+<meta name="keywords" content="Lavendra Homes, Free Ads Sri Lanka, Post Free Ads, Sell Items Online, Buy Items Online, Donate Items, Free Classifieds Sri Lanka">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lavendra.homes/">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:title" content="Lavendra Homes - Free Ad Posting Website in Sri Lanka">
+<meta property="og:description" content="Post ads for houses, vehicles, electronics, clothes, furniture, jobs, and more for free on Lavendra Homes. Trusted online marketplace in Sri Lanka.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lavendra.homes/">
+<meta property="og:image" content="https://lavendra.homes/assets/og-image.jpg">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENF69H8QE3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ENF69H8QE3');
+</script>
 
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
@@ -57,8 +76,10 @@ main { flex:1; display:flex; flex-direction:column; }
 
 /* CATEGORIES GRID */
 .categories { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px; width:90%; max-width:1200px; margin:40px auto; }
-.category { background:#fff; border-radius:20px; padding:20px; text-align:center; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; }
+.category { background:#fff; border-radius:20px; padding:20px; text-align:center; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; text-decoration: none; /* removes underline */
+    color: #333;  }
 .category:hover { transform:translateY(-5px); box-shadow:0 15px 25px rgba(0,0,0,0.2); background: #FFB6B9; color:#fff; }
+
 
 /* FOOTER */
 footer { background:#FFB6B9; color:#990e64; text-align:center; padding:30px 20px; margin-top:auto; }
@@ -128,27 +149,30 @@ footer .social-icons a:hover { color:#990e64; transform:scale(1.2); }
 
     <!-- CATEGORIES -->
     <section class="categories" id="categories">
-        <div class="category">Lands for Sale</div>
-        <div class="category">Houses for Sale</div>
-        <div class="category">Houses for Rent</div>
-        <div class="category">Rent Rooms</div>
-        <div class="category">Jobs</div>
-        <div class="category">Vehicles</div>
-        <div class="category">Electronics</div>
-        <div class="category">Clothes</div>
-        <div class="category">Shoes</div>
-        <div class="category">Accessories</div>
-        <div class="category">Pets & Animals</div>
-        <div class="category">Education</div>
-        <div class="category">Furniture</div>
-        <div class="category">Home & Garden</div>
-        <div class="category">Sports & Fitness</div>
-        <div class="category">Toys</div>
-        <div class="category">Musical Instruments</div>
-        <div class="category">Beauty & Personal Care</div>
-        <div class="category">Other Items</div>
-        <div class="category">Donations</div>
-    </section>
+    <a href="lands-for-sale.html" class="category">Lands for Sale</a>
+    <a href="houses-for-sale.html" class="category">Houses for Sale</a>
+    <a href="houses-for-rent.html" class="category">Houses for Rent</a>
+    <a href="rent-rooms.html" class="category">Rent Rooms</a>
+    <a href="jobs.html" class="category">Jobs</a>
+    <a href="vehicles.html" class="category">Vehicles</a>
+    <a href="electronics.html" class="category">Electronics</a>
+    <a href="clothes.html" class="category">Clothes</a>
+    <a href="shoes.html" class="category">Shoes</a>
+    <a href="accessories.html" class="category">Accessories</a>
+    <a href="crafts-handmade.html" class="category">Crafts & Handmade Items</a>
+    <a href="kids-toys.html" class="category">Kids Items & Toys</a>
+    <a href="food-beverages.html" class="category">Food & Beverages</a>
+    <a href="pets-animals.html" class="category">Pets & Animals</a>
+    <a href="education.html" class="category">Education</a>
+    <a href="furniture.html" class="category">Furniture</a>
+    <a href="home-garden.html" class="category">Home & Garden</a>
+    <a href="beauty-personal-care.html" class="category">Beauty & Personal Care</a>
+    <a href="other-items.html" class="category">Other Items</a>
+    <a href="donations.html" class="category">Donations</a>
+</section>
+</div>
+</section>
+
 </main>
 
 <!-- FOOTER -->

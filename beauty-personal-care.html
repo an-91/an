@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty & Personal Care Products in Sri Lanka | Lavendra Homes</title>
+<meta name="description" content="Browse and buy beauty & personal care products across Sri Lanka on Lavendra Homes. Find skincare, makeup, hair care, perfumes, and grooming products. Post free beauty ads online.">
+<meta name="keywords" content="beauty products Sri Lanka, skincare Colombo, makeup Kandy, hair care Galle, perfumes Sri Lanka, grooming products Sri Lanka, Lavendra Homes, buy beauty products">
+
+<!-- Open Graph for social sharing -->
+<meta property="og:title" content="Beauty & Personal Care Products in Sri Lanka | Lavendra Homes">
+<meta property="og:description" content="Discover and search beauty & personal care products across Sri Lanka. Browse skincare, makeup, hair care, perfumes, and grooming products. Post free ads online.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lavendra.homes/beauty-products">
+<meta property="og:image" content="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80">
+
+<!-- Google Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+html, body { height:100%; }
+body { display:flex; flex-direction:column; background:#FFF3F3; color:#333; }
+
+/* Navbar */
+nav {
+  background:#FFB6B9; color:#fff;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 30px; flex-wrap:wrap;
+}
+nav .logo { font-size:1.5em; font-weight:bold; color:#fff; }
+nav ul { list-style:none; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; }
+nav ul li a { color:#fff; text-decoration:none; padding:5px 10px; border-radius:5px; transition:0.3s; }
+nav ul li a:hover, nav ul li a.active { background:#FFF9C4; color:#FF6B6B; }
+.menu-toggle { display:none; flex-direction:column; cursor:pointer; }
+.menu-toggle span { height:3px; width:25px; background:#fff; margin:4px 0; border-radius:3px; }
+
+/* Main Content Wrapper */
+main { flex:1; display:flex; flex-direction:column; }
+
+/* Page Header */
+.page-header { text-align:center; padding:30px 20px 20px; background:#FFDFD3; color:#FF6B6B; }
+.page-header h1 { font-size:2em; }
+.page-header p { font-size:1.1em; color:#555; }
+
+/* Search Bar */
+.search-bar {
+  display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:20px auto;
+  max-width:1200px; padding:0 20px;
+}
+.search-bar input {
+  padding:10px 15px; border-radius:10px; border:1px solid #ccc; font-size:1em; min-width:120px;
+}
+.search-bar input:focus {
+  outline:none; border-color:#FF6B6B; box-shadow:0 0 5px rgba(255,107,107,0.5);
+}
+
+/* Items Grid */
+.items-grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap:20px;
+  max-width:1200px; margin:30px auto; padding:0 20px;
+}
+.item-card {
+  background:#fff; border-radius:20px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  transition:0.3s; text-align:center; padding-bottom:10px;
+}
+.item-card:hover { transform:translateY(-5px); box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+
+/* Fixed Image Size */
+.item-card img {
+  width:100%;
+  height:200px;         
+  object-fit:cover;     
+  border-bottom:1px solid #ddd;
+  border-radius: 15px 15px 0 0;
+}
+.item-card .item-content { padding:15px; }
+.item-card .item-content h3 { color:#FF6B6B; margin-bottom:10px; font-size:1.1em; }
+.item-card .item-content span { font-weight:bold; color:#333; display:block; margin-bottom:5px; }
+.item-card .item-content .location { font-weight:normal; color:#666; font-size:0.9em; }
+
+/* Footer */
+footer { 
+  background: #FFB6B9; 
+  color:#990e64; 
+  text-decoration: none;
+  text-align:center; 
+  padding:30px 20px; 
+}
+
+/* Floating Back to Home Button */
+#backButton {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#FF6B6B;
+  color:#fff;
+  border:none;
+  border-radius:50px;
+  padding:12px 20px;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  transition:0.3s;
+  z-index:1000;
+}
+#backButton:hover {
+  background:#FF3B3B;
+  transform:scale(1.05);
+}
+
+/* Responsive */
+@media(max-width:992px){
+  .items-grid { grid-template-columns: repeat(2, 1fr); } 
+}
+@media(max-width:768px){
+  nav ul { display:none; flex-direction:column; width:100%; text-align:center; margin-top:10px; }
+  nav ul.active { display:flex; }
+  .menu-toggle { display:flex; }
+  .page-header h1{ font-size:1.6em; }
+  .page-header p{ font-size:1em; }
+  .item-card img { height:150px; }
+  .search-bar input { min-width:120px; flex:1; }
+  footer { font-size: 12px; }
+}
+@media(max-width:480px){
+  .page-header h1{ font-size:1.4em; }
+  .page-header p{ font-size:0.9em; }
+  .items-grid { grid-template-columns: 1fr; } 
+  .item-card img { height:120px; }
+  .item-card .item-content h3 { font-size:1em; }
+  .search-bar { flex-direction:column; align-items:center; }
+  .search-bar input { width:100%; max-width:300px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Lavendra Homes</div>
+  <div class="menu-toggle" id="menuToggle">
+    <span></span><span></span><span></span>
+  </div>
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="donations.html">Donate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="post-ad.html">Post Ad</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="page-header">
+    <h1>Beauty & Personal Care Products in Sri Lanka</h1>
+    <p>Shop skincare, haircare, cosmetics, and wellness products from trusted sellers.</p>
+  </section>
+
+  <!-- Search Bar -->
+  <section class="search-bar" aria-label="Search Beauty ads">
+    <input type="text" id="nameInput" placeholder="Product Name/Type" aria-label="Product Name">
+    <input type="text" id="locationInput" placeholder="Location" aria-label="Location">
+    <input type="number" id="minPrice" placeholder="Min Price" min="0" aria-label="Minimum Price">
+    <input type="number" id="maxPrice" placeholder="Max Price" min="0" aria-label="Maximum Price">
+  </section>
+
+ 
+</main>
+
+<footer>
+  <p>Email us at: <a href="mailto:info@lavendra.homes" style="color:#990e64; text-decoration:none;">lavendra.homes@gmail.com</a></p>
+  &copy; 2025 Lavendra Homes. All Rights Reserved.
+</footer>
+
+<!-- Floating Back to Home Button -->
+<button id="backButton" onclick="window.location.href='index.html'">Back to Home</button>
+
+<script>
+  // Navbar toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  menuToggle.addEventListener('click', (e) => { e.stopPropagation(); navMenu.classList.toggle('active'); });
+  document.addEventListener('click', (e) => { if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) navMenu.classList.remove('active'); });
+
+  // Live filter
+  const nameInput = document.getElementById('nameInput');
+  const locationInput = document.getElementById('locationInput');
+  const minPriceInput = document.getElementById('minPrice');
+  const maxPriceInput = document.getElementById('maxPrice');
+  const items = document.querySelectorAll('.item-card');
+
+  function filterItems() {
+    const nameFilter = nameInput.value.toLowerCase();
+    const locationFilter = locationInput.value.toLowerCase();
+    const minPrice = minPriceInput.value ? parseInt(minPriceInput.value) : 0;
+    const maxPrice = maxPriceInput.value ? parseInt(maxPriceInput.value) : Infinity;
+
+    items.forEach(item => {
+      const name = item.dataset.name.toLowerCase();
+      const location = item.dataset.location.toLowerCase();
+      const price = parseInt(item.dataset.price);
+      const matchesName = name.includes(nameFilter);
+      const matchesLocation = location.includes(locationFilter);
+      const matchesPrice = price >= minPrice && price <= maxPrice;
+      item.style.display = (matchesName && matchesLocation && matchesPrice) ? '' : 'none';
+    });
+  }
+
+  nameInput.addEventListener('input', filterItems);
+  locationInput.addEventListener('input', filterItems);
+  minPriceInput.addEventListener('input', filterItems);
+  maxPriceInput.addEventListener('input', filterItems);
+</script>
+
+</body>
+</html>
