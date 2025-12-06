@@ -39,9 +39,7 @@ body { background:#FCE4EC; min-height:100vh; }
 
 /* NAVBAR */
 nav { background:#FFB6B9; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; position:relative; z-index:10; }
-nav .logo { font-size:24px; font-weight:700; color:#990e64; display:flex; align-items:center; gap:10px; }
-.logo-img { height:40px; width:auto; border-radius:8px; }
-
+nav .logo { font-size:24px; font-weight:700; color:#990e64; }
 nav ul { list-style:none; display:flex; gap:15px; }
 nav ul li a { text-decoration:none; color:#990e64; font-weight:600; padding:8px 0; transition:0.3s ease; }
 nav ul li a.active { background:#FFF9C4; color:#FF6B6B; padding:8px 16px; border-radius:12px; }
@@ -78,8 +76,10 @@ main { flex:1; display:flex; flex-direction:column; }
 
 /* CATEGORIES GRID */
 .categories { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px; width:90%; max-width:1200px; margin:40px auto; }
-.category { background:#fff; border-radius:20px; padding:20px; text-align:center; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; text-decoration: none; color:#333; }
-.category:hover { transform:translateY(-5px); box-shadow:0 15px 25px rgba(0,0,0,0.2); background:#FFB6B9; color:#fff; }
+.category { background:#fff; border-radius:20px; padding:20px; text-align:center; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; text-decoration: none; /* removes underline */
+    color: #333;  }
+.category:hover { transform:translateY(-5px); box-shadow:0 15px 25px rgba(0,0,0,0.2); background: #FFB6B9; color:#fff; }
+
 
 /* FOOTER */
 footer { background:#FFB6B9; color:#990e64; text-align:center; padding:30px 20px; margin-top:auto; }
@@ -101,15 +101,10 @@ footer .social-icons a:hover { color:#990e64; transform:scale(1.2); }
 
 <!-- NAVBAR -->
 <nav>
-    <div class="logo">
-        <img src="logo.png" alt="Logo" class="logo-img">
-        Lavendra Homes
-    </div>
-
+    <div class="logo">Lavendra Homes</div>
     <div class="menu-toggle" onclick="toggleMenu()">
         <span></span><span></span><span></span>
     </div>
-
     <ul>
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -174,6 +169,8 @@ footer .social-icons a:hover { color:#990e64; transform:scale(1.2); }
     <a href="beauty-personal-care.html" class="category">Beauty & Personal Care</a>
     <a href="other-items.html" class="category">Other Items</a>
     <a href="donations.html" class="category">Donations</a>
+</section>
+</div>
 </section>
 
 </main>
