@@ -241,22 +241,41 @@
     </footer>
 
     <script>
-       const loader = document.getElementById("loader");
-    const MIN_LOADING_TIME = 800; // keeps loader visible on small devices
-    const startTime = Date.now();
+      const loader = document.getElementById("loader");
 
-    window.addEventListener("load", () => {
-        const elapsed = Date.now() - startTime;
-        const remaining = Math.max(MIN_LOADING_TIME - elapsed, 0);
+    function waitForAllImages() {
+        const images = document.images;
+        let loaded = 0;
+        const total = images.length;
 
+        if (total === 0) hideLoader();
+
+        for (let img of images) {
+            if (img.complete) {
+                imageLoaded();
+            } else {
+                img.addEventListener("load", imageLoaded);
+                img.addEventListener("error", imageLoaded);
+            }
+        }
+
+        function imageLoaded() {
+            loaded++;
+            if (loaded === total) {
+                hideLoader();
+            }
+        }
+    }
+
+    function hideLoader() {
+        loader.classList.add("hidden");
         setTimeout(() => {
-            loader.classList.add("hidden");
-            setTimeout(() => {
-                loader.style.display = "none";
-            }, 500);
-        }, remaining);
-    });
+            loader.style.display = "none";
+        }, 500);
+    }
 
+    // Start after DOM is ready
+    document.addEventListener("DOMContentLoaded", waitForAllImages);
         const businesses = [
             { name: "Lavendra Homes", tag: "Category", desc: "Sample layout for demonstration purposes only.", img: 'template-10.png', url: "shop1.html" },
             { name: "Lavendra Homes", tag: "Category", desc: "Sample layout for demonstration purposes only.", img: 'template-1.png', url: "shop2.html" },
