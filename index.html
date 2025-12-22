@@ -192,6 +192,8 @@
             .search-container { margin: -20px auto 40px; padding: 0 15px; }
             #category-search { padding: 15px 20px; font-size: 0.95rem; border-radius: 12px; }
             .pagination-container { flex-direction: column; gap: 20px; }
+
+            
         }
     </style>
 </head>
@@ -239,11 +241,21 @@
     </footer>
 
     <script>
-        window.addEventListener("load", () => {
-            const loader = document.getElementById("loader");
+       const loader = document.getElementById("loader");
+    const MIN_LOADING_TIME = 800; // keeps loader visible on small devices
+    const startTime = Date.now();
+
+    window.addEventListener("load", () => {
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(MIN_LOADING_TIME - elapsed, 0);
+
+        setTimeout(() => {
             loader.classList.add("hidden");
-            setTimeout(() => { loader.style.display = "none"; }, 500);
-        });
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        }, remaining);
+    });
 
         const businesses = [
             { name: "Lavendra Homes", tag: "Category", desc: "Sample layout for demonstration purposes only.", img: 'template-10.png', url: "shop1.html" },

@@ -107,8 +107,8 @@
 
     <main class="container">
         <div class="product-grid">
-            <div class="product-card" onclick="openPopup('Product Name', 'Product Price', 'template-6.png', 'Product Description', ['template-6.png','template-6.png','template-6.png'])">
-                <img src="template-6.png" class="product-img" alt="ITEM_NAME">
+            <div class="product-card" onclick="openPopup('Product Name', 'Product Price', 'template-6.jpg', 'Product Description', ['template-6.jpg','template-6.jpg','template-6.jpg'])">
+                <img src="template-6.jpg" class="product-img" alt="ITEM_NAME">
                 <div class="product-info">
                     <h3>ITEM_NAME</h3>
                     <p class="price">ITEM_PRICE</p>
@@ -116,8 +116,8 @@
                 </div>
             </div>
 
-            <div class="product-card" onclick="openPopup('Product Name', 'Product Price', 'template-6.png', 'Product Description', ['template-6.png','template-6.png','template-6.png'])">
-                <img src="template-6.png" class="product-img" alt="ITEM_NAME">
+            <div class="product-card" onclick="openPopup('Product Name', 'Product Price', 'template-6.jpg', 'Product Description', ['template-6.jpg','template-6.jpg','template-6.jpg'])">
+                <img src="template-6.jpg" class="product-img" alt="ITEM_NAME">
                 <div class="product-info">
                     <h3>ITEM_NAME</h3>
                     <p class="price">ITEM_PRICE</p>
@@ -159,11 +159,21 @@
     <button id="upBtn" onclick="scrollToTop()" title="Go Up">⬆️</button>
 
     <script>
-        window.addEventListener("load", () => {
-            const loader = document.getElementById("loader");
+        const loader = document.getElementById("loader");
+    const MIN_LOADING_TIME = 800; // keeps loader visible on small devices
+    const startTime = Date.now();
+
+    window.addEventListener("load", () => {
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(MIN_LOADING_TIME - elapsed, 0);
+
+        setTimeout(() => {
             loader.classList.add("hidden");
-            setTimeout(() => { loader.style.display = "none"; }, 500);
-        });
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        }, remaining);
+    });
 
         const modal = document.getElementById("productModal");
 
