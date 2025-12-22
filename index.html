@@ -1,218 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Explore Products & Local Services | Lavendra Homes Sri Lanka</title>
+    <meta name="description" content="Discover premium handcrafted products and verified local services in Sri Lanka. Browse our curated categories including Fashion, Bakery, and Wellness at Lavendra Homes.">
+    <meta name="keywords" content="Sri Lanka business directory, local products, artisan shops Sri Lanka, Lavendra Homes">
+    <link rel="canonical" href="https://lavendrahomes.com/explore" />
 
-<title>Lavendra Homes - Free Ad Posting Website in Sri Lanka</title>
-<meta name="description" content="Lavendra Homes is a trusted free ad posting website in Sri Lanka. Post ads for houses, vehicles, electronics, clothes, furniture, jobs, and more at no cost.">
-<meta name="keywords" content="Lavendra Homes, Free Ads Sri Lanka, Post Free Ads, Sell Items Online, Buy Items Online, Donate Items, Free Classifieds Sri Lanka">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://lavendra.homes/">
+    <meta property="og:title" content="Explore Products & Services | Lavendra Homes">
+    <meta property="og:description" content="Your curated guide to the best local businesses in Sri Lanka.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lavendrahomes.com/explore">
+    <meta property="og:image" content="https://lavendrahomes.com/og-image.jpg">
 
-<!-- Open Graph / Social Media -->
-<meta property="og:title" content="Lavendra Homes - Free Ad Posting Website in Sri Lanka">
-<meta property="og:description" content="Post ads for houses, vehicles, electronics, clothes, furniture, jobs, and more for free on Lavendra Homes. Trusted online marketplace in Sri Lanka.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lavendra.homes/">
-<meta property="og:image" content="https://lavendra.homes/assets/og-image.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Local Businesses in Sri Lanka",
+      "description": "A directory of verified local products and services.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Luxe Thread 1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Oven 2"
+        }
+      ]
+    }
+    </script>
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENF69H8QE3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <style>
+        :root { 
+            --warm-white: #fdfbf7;
+            --primary-pink: #e46eb6;
+            --card-bg: #ffffff;
+            --charcoal: #2d2d2d;
+            --text-muted: #666;
+            --border-light: rgba(0,0,0,0.08);
+        }
+        
+        body { 
+            margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--warm-white); color: var(--charcoal);
+            line-height: 1.6;
+        }
 
-  gtag('config', 'G-ENF69H8QE3');
-</script>
+        /* --- LOADER --- */
+        #loader { 
+            position: fixed; top:0; left:0; width:100%; height:100%; 
+            background: #fff; display:flex; justify-content:center; 
+            align-items:center; z-index:9999; transition: opacity 0.5s ease; 
+        }
+        .loader { width: 40px; height: 40px; border: 3px solid #eee; border-top: 3px solid var(--primary-pink); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #loader.hidden { opacity: 0; pointer-events: none; }
 
-<style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
-html, body { height:100%; display:flex; flex-direction:column; }
-body { background:#FCE4EC; min-height:100vh; }
+        nav { padding: 30px 5%; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
 
-/* NAVBAR */
-nav { background:#FFB6B9; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; position:relative; z-index:10; }
-nav .logo { font-size:24px; font-weight:700; color:#990e64; }
-nav ul { list-style:none; display:flex; gap:15px; }
-nav ul li a { text-decoration:none; color:#990e64; font-weight:600; padding:8px 0; transition:0.3s ease; }
-nav ul li a.active { background:#FFF9C4; color:#FF6B6B; padding:8px 16px; border-radius:12px; }
-nav ul li a.active:hover { background:#FFF59D; }
-.post-ad-btn { margin-left:15px; padding:8px 18px; border:none; border-radius:12px; background-color:#FFF9C4; color:#FF6B6B; font-weight:600; cursor:pointer; transition:background 0.3s; }
-.post-ad-btn:hover { background-color:#FFF59D; }
+        .hero-title { text-align: center; padding: 60px 20px 80px; }
+        .hero-title h1 { font-family: 'Quicksand', sans-serif; font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 300; margin: 0; color: var(--primary-pink); line-height: 1.2; }
+        .hero-title p { font-size: 1.1rem; color: var(--text-muted); margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-/* HAMBURGER */
-.menu-toggle { display:none; flex-direction:column; cursor:pointer; }
-.menu-toggle span { background:#fff; height:3px; width:25px; margin:4px 0; border-radius:2px; transition:all 0.3s ease; }
+        .search-container { max-width: 600px; margin: -40px auto 60px; padding: 0 20px; }
+        #category-search { 
+            width: 100%; 
+            padding: 20px 30px; 
+            border-radius: 100px; 
+            border: 1px solid #ddd; 
+            font-size: 1rem; 
+            outline: none; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            text-align: center; 
+            background: white;
+            box-sizing: border-box;
+        }
 
-/* OVERLAY MENU */
-.overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9; }
-.overlay.active { display:flex; }
-.overlay .nav-box { background:#fff; padding:30px 40px; border-radius:20px; text-align:center; width:80%; max-width:320px; box-shadow:0 10px 30px rgba(0,0,0,0.2); animation: fadeIn 0.3s ease; }
-.overlay .nav-box ul { list-style:none; display:flex; flex-direction:column; gap:35px; }
-.overlay .nav-box ul li a { color:#FF6B6B; font-weight:600; font-size:18px; text-decoration:none; padding:10px 16px; border-radius:12px; background:none; transition:0.3s; }
-.overlay .nav-box ul li a.active, .overlay .nav-box ul li a:hover { background:#FFF9C4; color:#FF6B6B; }
+        /* --- PRODUCT GRID --- */
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 40px; 
+            padding: 0 5%; 
+            max-width: 1400px; 
+            margin: auto;
+            min-height: 400px;
+        }
 
-/* FLEXIBLE MAIN CONTENT TO PUSH FOOTER DOWN */
-main { flex:1; display:flex; flex-direction:column; }
+        .product-card { 
+            background: var(--card-bg); 
+            border-radius: 20px; 
+            overflow: hidden; 
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+        }
 
-/* HERO SLIDER */
-.hero-slider { position:relative; width:100%; min-height:80vh; display:flex; overflow:hidden; flex-direction:column; align-items:center; justify-content:center; }
-.slide { width:100%; height:100%; display:flex; justify-content:center; align-items:center; text-align:center; opacity:0; position:absolute; top:0; left:0; transition:opacity 1s ease-in-out; background: linear-gradient(135deg, #ffd1dc, #ffe0ac); padding:0 20px; }
-.slide:nth-child(2) { background: linear-gradient(135deg, #a8edea, #fed6e3); }
-.slide:nth-child(3) { background: linear-gradient(135deg, #d4fc79, #96e6a1); }
-.slide.active { opacity:1; }
-.overlay-text { background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); padding:25px 35px; border-radius:15px; animation: fadeIn 1s ease-in-out; }
-.overlay-text h1 { font-size:2.5em; color:#FF6B6B; margin-bottom:15px; }
-.overlay-text p { font-size:1.2em; color:#555; margin-bottom:20px; }
-.overlay-text button { padding:10px 20px; border:none; border-radius:12px; background:#FFB6B9; color:#333; font-weight:600; cursor:pointer; transition:0.3s; }
-.overlay-text button:hover { background:#FF8C94; }
+        .product-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 35px rgba(228, 110, 182, 0.12); 
+            border-color: var(--primary-pink);
+        }
 
-/* CATEGORIES GRID */
-.categories { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px; width:90%; max-width:1200px; margin:40px auto; }
-.category { background:#fff; border-radius:20px; padding:20px; text-align:center; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; text-decoration: none; /* removes underline */
-    color: #333;  }
-.category:hover { transform:translateY(-5px); box-shadow:0 15px 25px rgba(0,0,0,0.2); background: #FFB6B9; color:#fff; }
+        .image-box { width: 100%; height: 240px; overflow: hidden; background: #f0f0f0; }
+        .image-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .product-card:hover .image-box img { transform: scale(1.08); }
 
+        .content-box { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .category-tag { font-size: 0.75rem; text-transform: uppercase; color: var(--primary-pink); font-weight: 600; letter-spacing: 1.5px; }
+        .product-name { font-size: 1.6rem; margin: 10px 0; font-family: 'Quicksand', sans-serif; font-weight: 600; color: var(--charcoal); }
+        .product-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; }
+        .card-footer { margin-top: auto; padding-top: 15px; border-top: 1px solid #f5f5f5; color: var(--primary-pink); font-weight: 600; font-size: 0.9rem; }
 
-/* FOOTER */
-footer { background:#FFB6B9; color:#990e64; text-align:center; padding:30px 20px; margin-top:auto; }
-footer p { margin-bottom:10px; }
-footer .social-icons { margin-top:10px; }
-footer .social-icons a { color:#990e64; margin:0 10px; font-size:20px; display:inline-block; transition:all 0.3s; }
-footer .social-icons a:hover { color:#990e64; transform:scale(1.2); }
+        /* --- PAGINATION --- */
+        .pagination-container { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 15px; 
+            padding: 60px 0; 
+        }
+        
+        .page-btn { 
+            padding: 12px 28px; 
+            border: 2px solid var(--primary-pink); 
+            color: var(--primary-pink); 
+            background: transparent;
+            border-radius: 50px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-    .menu-toggle { display:flex; }
-    nav ul, .post-ad-btn { display:none; }
-    footer p{ font-size: 12px; }
-}
-</style>
+        .page-btn:hover:not(:disabled) { background: var(--primary-pink); color: white; }
+        .page-btn:disabled { opacity: 0.3; cursor: not-allowed; border-color: #ccc; color: #999; }
+
+        #page-number-display {
+            font-weight: 600;
+            color: var(--charcoal);
+            background: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        /* --- FOOTER --- */
+        footer { 
+            padding: 80px 20px; 
+            background: #fff; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+            margin-top: 60px; 
+        }
+
+        .footer-links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 25px; 
+            margin-bottom: 30px; 
+            flex-wrap: wrap; 
+        }
+
+        .footer-links a { 
+            color: var(--charcoal); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover { 
+            color: var(--primary-pink); 
+        }
+
+        .copyright { font-size: 0.85rem; color: #888; line-height: 1.8; }
+
+        @media (max-width: 600px) {
+            .product-grid { grid-template-columns: 1fr; }
+            .footer-links { flex-direction: column; gap: 15px; }
+            .hero-title { padding: 40px 20px; }
+            .search-container { margin: -20px auto 40px; padding: 0 15px; }
+            #category-search { padding: 15px 20px; font-size: 0.95rem; border-radius: 12px; }
+            .pagination-container { flex-direction: column; gap: 20px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav>
-    <div class="logo">Lavendra Homes</div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-    </div>
-    <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="post-ad.html">Post Ad</a></li>
-    </ul>
-</nav>
+    <div id="loader" aria-hidden="true"><div class="loader"></div></div>
 
-<!-- MOBILE OVERLAY -->
-<div class="overlay" id="overlay">
-    <div class="nav-box">
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="post-ad.html">Post Ad</a></li>
-        </ul>
-    </div>
-</div>
+    <nav aria-label="Main Navigation">
+        <span>Lavendra Homes</span>
+    </nav>
 
-<!-- MAIN CONTENT -->
-<main>
-    <!-- HERO -->
-    <section class="hero-slider">
-        <div class="slide active">
-            <div class="overlay-text">
-                <h1>Free Ad Posting in Sri Lanka</h1>
-                <p>Post ads for houses, vehicles, electronics, clothes, furniture, jobs, and more for free.</p>
-                <button onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Explore Categories</button>
-            </div>
+    <header class="hero-title">
+        <h1>Explore Products You Need</h1>
+        <p>Browse products and services from different categories on Lavendra Homes.</p>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="category-search" placeholder="Search by name or category..." aria-label="Search businesses">
         </div>
-        <div class="slide">
-            <div class="overlay-text">
-                <h1>Buy, Sell & Donate Easily</h1>
-                <p>Find amazing deals and post your free ads online in Sri Lanka.</p>
-                <button onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Explore Categories</button>
-            </div>
+
+        <section class="product-grid" id="categories-container" aria-label="Business Directory">
+            </section>
+
+        <nav class="pagination-container" id="pagination-controls" aria-label="Pagination Navigation">
+            <button class="page-btn" id="prevBtn" onclick="changePage(-1)">Previous</button>
+            <span id="page-number-display" aria-live="polite">Page 1 of 1</span>
+            <button class="page-btn" id="nextBtn" onclick="changePage(1)">Next</button>
+        </nav>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-links">
+           <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="create-store.html">Create Your Store</a>
+  <a href="contact.html">Contact</a>
         </div>
-    </section>
+        
+         <div class="copyright">
+            <p>&copy; 2025 Lavendra Homes.All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    <!-- CATEGORIES -->
-    <section class="categories" id="categories">
-    <a href="lands-for-sale.html" class="category">Lands for Sale</a>
-    <a href="houses-for-sale.html" class="category">Houses for Sale</a>
-    <a href="houses-for-rent.html" class="category">Houses for Rent</a>
-    <a href="rent-rooms.html" class="category">Rent Rooms</a>
-    <a href="jobs.html" class="category">Jobs</a>
-    <a href="vehicles.html" class="category">Vehicles</a>
-    <a href="electronics.html" class="category">Electronics</a>
-    <a href="clothes.html" class="category">Clothes</a>
-    <a href="shoes.html" class="category">Shoes</a>
-    <a href="accessories.html" class="category">Accessories</a>
-    <a href="crafts-handmade.html" class="category">Crafts & Handmade Items</a>
-    <a href="kids-toys.html" class="category">Kids Items & Toys</a>
-    <a href="food-beverages.html" class="category">Food & Beverages</a>
-    <a href="pets-animals.html" class="category">Pets & Animals</a>
-    <a href="education.html" class="category">Education</a>
-    <a href="furniture.html" class="category">Furniture</a>
-    <a href="home-garden.html" class="category">Home & Garden</a>
-    <a href="beauty-personal-care.html" class="category">Beauty & Personal Care</a>
-    <a href="other-items.html" class="category">Other Items</a>
-    <a href="donations.html" class="category">Donations</a>
-</section>
-</div>
-</section>
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.getElementById("loader");
+            loader.classList.add("hidden");
+            setTimeout(() => { loader.style.display = "none"; }, 500);
+        });
 
-</main>
+        const businesses = [
+            { name: "Lavendra Homes", tag: "Category", desc: "Sample layout for demonstration purposes only.", img: 'template-10.png', url: "shop1.html" },
+            { name: "Lavendra Homes", tag: "Category", desc: "Sample layout for demonstration purposes only.", img: 'template-1.png', url: "shop2.html" },
+             { name: "Lavendra Homes", tag: "Category", desc: "Sample layout for demonstration purposes only.", img: 'template-9.png', url: "shop1.html" },
+            { name: "Lavendra Homes", tag: "Category", desc: "Sample layout for demonstration purposes only.", img: 'template-4.png', url: "shop2.html" },
+             { name: "Lavendra Homes", tag: "Category", desc: "Sample layout for demonstration purposes only.", img: 'template-5.png', url: "shop1.html" },
+            { name: "Lavendra Homes", tag: "Category", desc: "Sample layout for demonstration purposes only.", img: 'template-6.png', url: "shop2.html" },
+            
+        ];
 
-<!-- FOOTER -->
-<footer>
-    <p>Email us at: <a href="mailto:info@lavendra.homes" style="color:#990e64; text-decoration:none;">lavendra.homes@gmail.com</a></p>
-    <p style="margin-top:10px;">&copy; 2025 Lavendra Homes. All Rights Reserved.</p>
-</footer>
+        let currentPage = 1;
+        const itemsPerPage = 6;
+        let filteredData = [...businesses];
 
-<!-- SCRIPTS -->
-<script>
-function toggleMenu(){
-    document.getElementById('overlay').classList.toggle('active');
-}
-document.getElementById('overlay').addEventListener('click', function(e){
-    if(e.target === this) this.classList.remove('active');
-});
-document.querySelectorAll('.overlay .nav-box ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.getElementById('overlay').classList.remove('active');
-    });
-});
-window.addEventListener('resize', () => {
-    if(window.innerWidth > 768){
-        document.getElementById('overlay').classList.remove('active');
-    }
-});
+        function renderBusinesses() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = '';
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageItems = filteredData.slice(start, end);
 
-// HERO SLIDER
-let currentSlide=0;
-const slides=document.querySelectorAll('.slide');
-const totalSlides=slides.length;
-function showSlide(index){
-    slides.forEach(s=>s.classList.remove('active'));
-    slides[index].classList.add('active');
-}
-setInterval(()=>{
-    currentSlide=(currentSlide+1)%totalSlides;
-    showSlide(currentSlide);
-},5000);
-</script>
+            pageItems.forEach(b => {
+                const card = document.createElement('article'); // Changed to article for SEO
+                card.className = 'product-card';
+                card.onclick = () => { window.open(b.url, "_blank"); }; // OPEN IN NEW TAB
+                card.innerHTML = `
+                    <div class="image-box">
+                        <img src="${b.img}" alt="${b.name}" loading="lazy">
+                    </div>
+                    <div class="content-box">
+                        <span class="category-tag">${b.tag}</span>
+                        <h2 class="product-name">${b.name}</h2>
+                        <p class="product-desc">${b.desc}</p>
+                        <div class="card-footer">View Details &rarr;</div>
+                    </div>`;
+                container.appendChild(card);
+            });
+            updatePagination();
+        }
 
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+            document.getElementById('page-number-display').innerText = `Page ${currentPage} of ${totalPages || 1}`;
+            document.getElementById('prevBtn').disabled = (currentPage === 1);
+            document.getElementById('nextBtn').disabled = (currentPage === totalPages || totalPages === 0);
+            document.getElementById('pagination-controls').style.display = (totalPages <= 1) ? 'none' : 'flex';
+        }
+
+        function changePage(direction) {
+            currentPage += direction;
+            renderBusinesses();
+            window.scrollTo({ top: document.getElementById('category-search').offsetTop - 20, behavior: 'smooth' });
+        }
+
+        document.getElementById('category-search').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            filteredData = businesses.filter(b => b.name.toLowerCase().includes(term) || b.tag.toLowerCase().includes(term));
+            currentPage = 1;
+            renderBusinesses();
+        });
+
+        renderBusinesses();
+    </script>
 </body>
 </html>
